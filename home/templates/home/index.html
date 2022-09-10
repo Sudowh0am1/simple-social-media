@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <form action="" method="get">
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Search">
+    </form><br/>
+
     {% if request.user.is_authenticated %}
         <h5 style="color: navy"><em>Logged in as {{ request.user.username }}</em></h5>
     {% endif %}
@@ -10,4 +16,5 @@
             <a href="{{ post.get_absolute_url }}" class="card-body">{{ post.body|truncatewords:5 }}</a>
         {% endfor %}
     </div>
+
 {% endblock %}
