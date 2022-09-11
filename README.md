@@ -1,0 +1,3 @@
+# simple-social-media
+a django sample project that acts as a simple social media. there's a home page where all shared posts are displayed.
+each user has it's own profile and also there are features such as like, follow, comment, search, ...
