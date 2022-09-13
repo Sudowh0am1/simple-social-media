@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from home.models import Post
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
-from .models import Relation
+from .models import Relation, Profile
 
 
 class UserRegisterView(View):
@@ -29,6 +29,7 @@ class UserRegisterView(View):
         if form.is_valid():
             cd = form.cleaned_data
             User.objects.create_user(cd["username"], cd["email"], cd["password1"])
+            # Profile.objects.create(user=user)
             messages.success(request, "Registered successfully :)", "success")
             return redirect("home:home")
         else:

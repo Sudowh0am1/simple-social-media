@@ -5,7 +5,7 @@ from .models import Profile
 
 
 class UserRegistrationForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control", "placeholder": "your ID"}))
+    username = forms.CharField(widget=forms.TextInput(attrs={"class": "form-control"}))       # "placeholder": "your ID"
     email = forms.EmailField(widget=forms.EmailInput(attrs={"class": "form-control"}))
     password1 = forms.CharField(label="password", widget=forms.PasswordInput(attrs={"class": "form-control"}))
     password2 = forms.CharField(label="confirm password", widget=forms.PasswordInput(attrs={"class": "form-control"}))
@@ -44,4 +44,3 @@ class EditUserForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ("age", "bio",)
-
